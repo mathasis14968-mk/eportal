@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import "../styles/login.css";
 import AutoLoginModal from "../components/AutoLoginModal";
 
+const API_BASE = "https://apps.hubspothk.com";   // ⭐ 你的 Worker API domain
+
 export default function Login() {
   const [employeeCode, setEmployeeCode] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +28,7 @@ export default function Login() {
       if (!token) return;
 
       try {
-        const res = await fetch("/auth/verify", {
+        const res = await fetch(`${API_BASE}/auth/verify`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = await res.json();
@@ -46,7 +48,7 @@ export default function Login() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/auth/login", {
+      const res = await fetch(`${API_BASE}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
