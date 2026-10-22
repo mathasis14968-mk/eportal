@@ -1,15 +1,10 @@
 {
-<<<<<<< HEAD
   "name": "my-office-app-eportal",
-=======
-  "name": "executive-portal",
->>>>>>> 2595b6864573fc111eb2233193186ffd5bbcee27
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-<<<<<<< HEAD
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
@@ -26,13 +21,5 @@
     "oxlint": "^1.88.0",
     "vite": "^8.3.4",
     "wrangler": "^4.151.2"
-=======
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "typescript": "~6.0.2",
-    "vite": "^8.3.0"
->>>>>>> 2595b6864573fc111eb2233193186ffd5bbcee27
   }
 }
