@@ -1,0 +1,5 @@
+name = "my-office-app-eportal"
+compatibility_date = "2026-05-11"
+
+# Cloudflare Pages Functions 設定
+pages_build_output_dir = "."

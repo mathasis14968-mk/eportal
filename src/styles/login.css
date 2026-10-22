@@ -1,0 +1,85 @@
+/* 全頁背景 */
+.login-container {
+  height: 100vh;
+  width: 100%;
+  background: #f5f5f7; /* Apple 淺灰 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* 中央白色卡片 */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* 標題 */
+.login-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* 副標題 */
+.login-subtitle {
+  font-size: 18px;
+  color: #6e6e73;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* 表單 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 標籤 */
+.input-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1d1d1f;
+}
+
+/* 輸入框 */
+.input-box {
+  padding: 14px 16px;
+  font-size: 18px;
+  border-radius: 14px;
+  border: 1px solid #d2d2d7;
+  margin-bottom: 20px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-box:focus {
+  border-color: #007aff; /* Apple 藍 */
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+}
+
+/* 按鈕 */
+.login-button {
+  background: #007aff;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 14px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+
+.login-button:active {
+  background: #0060d1;
+}

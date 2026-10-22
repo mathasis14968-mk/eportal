@@ -1,0 +1,82 @@
+/* 半透明背景 */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+/* 白色視窗卡片 */
+.modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* 標題 */
+.modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+}
+
+/* 使用者名稱（大字體） */
+.modal-username {
+  font-size: 24px;
+  font-weight: 600;
+  color: #007aff;
+  margin-bottom: 20px;
+}
+
+/* 描述 */
+.modal-desc {
+  font-size: 17px;
+  color: #6e6e73;
+  margin-bottom: 32px;
+}
+
+/* 按鈕區 */
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 按鈕 */
+.modal-btn {
+  padding: 14px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* 確定按鈕（Apple 藍） */
+.confirm {
+  background: #007aff;
+  color: white;
+}
+
+.confirm:active {
+  background: #0060d1;
+}
+
+/* 取消按鈕（淺灰） */
+.cancel {
+  background: #e5e5ea;
+  color: #1d1d1f;
+}
+
+.cancel:active {
+  background: #d1d1d6;
+}
