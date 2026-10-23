@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Login from "./routes/Login";
-import Dashboard, { loader as dashboardLoader } from "./routes/dashboard";
+import Dashboard, { loader as dashboardLoader } from "./routes/Dashboard";
 import SessionViewer from "./routes/SessionViewer";
 
 const router = createBrowserRouter([
