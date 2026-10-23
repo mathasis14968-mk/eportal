@@ -16,7 +16,7 @@ export default function Dashboard() {
     const session_id = localStorage.getItem("session_id");
     const refresh_token = localStorage.getItem("refresh_token");
 
-    await fetch("/auth/logout", {
+    await fetch("https://apps.hubspothk.com/auth/logout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ session_id, refresh_token })
