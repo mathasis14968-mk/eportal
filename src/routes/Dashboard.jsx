@@ -1,6 +1,7 @@
 // src/routes/dashboard.jsx
 import { useLoaderData, redirect } from "react-router-dom";
 import { requireAuth } from "../utils/requireAuth";
+import { apiFetch } from "../utils/apiClient";   // ⭐ 改用 apiClient
 import "../styles/dashboard.css";
 
 export async function loader() {
@@ -16,7 +17,7 @@ export default function Dashboard() {
     const session_id = localStorage.getItem("session_id");
     const refresh_token = localStorage.getItem("refresh_token");
 
-    await fetch("https://apps.hubspothk.com/auth/logout", {
+    await apiFetch("/auth/logout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ session_id, refresh_token })

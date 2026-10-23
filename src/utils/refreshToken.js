@@ -1,10 +1,12 @@
 // src/utils/refreshToken.js
+import { apiFetch } from "./apiClient";
+
 export async function refreshAccessToken() {
   const refresh_token = localStorage.getItem("refresh_token");
   if (!refresh_token) return false;
 
   try {
-    const res = await fetch("/auth/refresh", {
+    const res = await apiFetch("/auth/refresh", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ refresh_token })

@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import "../styles/login.css";
 import AutoLoginModal from "../components/AutoLoginModal";
-
-const API_BASE = "https://apps.hubspothk.com";   // ⭐ 你的 Worker API domain
+import { apiFetch } from "../utils/apiClient";   // ⭐ 改用 apiClient
 
 export default function Login() {
   const [employeeCode, setEmployeeCode] = useState("");
@@ -14,6 +13,7 @@ export default function Login() {
   const [autoLoginVisible, setAutoLoginVisible] = useState(false);
   const [autoLoginName, setAutoLoginName] = useState("");
 
+  // ⭐ 生成 device_id_hash
   useEffect(() => {
     let deviceId = localStorage.getItem("device_id_hash");
     if (!deviceId) {
@@ -22,15 +22,14 @@ export default function Login() {
     }
   }, []);
 
+  // ⭐ 自動登入檢查
   useEffect(() => {
     async function checkAutoLogin() {
       const token = localStorage.getItem("access_token");
       if (!token) return;
 
       try {
-        const res = await fetch(`${API_BASE}/auth/verify`, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        const res = await apiFetch("/auth/verify");
         const data = await res.json();
 
         if (res.ok && data.ok) {
@@ -42,13 +41,14 @@ export default function Login() {
     checkAutoLogin();
   }, []);
 
+  // ⭐ 手動登入
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setErrorMsg("");
 
     try {
-      const res = await fetch(`${API_BASE}/auth/login`, {
+      const res = await apiFetch("/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -66,6 +66,7 @@ export default function Login() {
         return;
       }
 
+      // ⭐ 儲存 token + session
       localStorage.setItem("access_token", data.access_token);
       localStorage.setItem("refresh_token", data.refresh_token);
       localStorage.setItem("session_id", data.session_id);
